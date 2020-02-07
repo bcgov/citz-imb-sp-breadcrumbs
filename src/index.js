@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import $ from 'jquery'
 
-$("#titleAreaRow > .ms-breadcrumb-box").attr('id', 'breadcrumb-root')
+window.addEventListener('load', () => {
+    const breadcrumbRoot = document.createElement('div')
+    breadcrumbRoot.setAttribute('id', 'breadcrumb-root')
+    const msbreadcrumbbox = document.body.querySelector('#titleAreaRow > .ms-breadcrumb-box')
 
-ReactDOM.render(<App />, document.getElementById('breadcrumb-root'));
+    msbreadcrumbbox.after(breadcrumbRoot)
+    msbreadcrumbbox.classList.add('ms-hidden')
+
+    ReactDOM.render(<App />, document.getElementById('breadcrumb-root'))
+})
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

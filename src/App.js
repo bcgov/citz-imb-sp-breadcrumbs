@@ -1,14 +1,18 @@
 import React from 'react';
-import './App.css';
-import { Breadcrumb } from 'office-ui-fabric-react';
-import { BreadcrumbBasicExample } from './components/Breadcrumb.js'
+import './css/App.css';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
+import RootBreadcrumb from './components/RootBreadcrumb';
 
-function App() {
+export default function App() {
+  const theme = createMuiTheme({
+    palette: {
+
+    }
+  })
+
   return (
-    <div className="App">
-      <BreadcrumbBasicExample />
-    </div>
-  );
+    <MuiThemeProvider theme={theme}>
+      <RootBreadcrumb />
+    </MuiThemeProvider>
+  )
 }
-
-export default App;
