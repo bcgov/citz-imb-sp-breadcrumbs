@@ -1,64 +1,63 @@
-import React, { Component, Fragment } from 'react'
-import { Link } from '@material-ui/core'
-import Axios from 'axios'
+import React, { useState, useEffect } from "react";
+import { Link } from "@material-ui/core";
+import Axios from "axios";
 
-export class SiteBreadcrumb extends Component {
+export default function SiteBreadcrumb(props) {
+  let _spPageContextInfo = window._spPageContextInfo;
+  let sitePath = "scott/projects";
 
-    constructor(props) {
-        super(props)
+  const [siteName, changeSiteName] = useState("Site...Site");
 
-        this.state = {
-            siteName: "Site"
+  const getSiteTitle = () => {
+    Axios.get(props.rootUrl + "/" + sitePath + "/_api/web")
+      .then(response => {
+        console.log(response.data.Title);
+        return response.data.Title;
+      })
+      .catch(error => {
+        console.groupCollapsed("Error Details");
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log("Error", error.message);
         }
-
-        console.log("pageContext", this.props.pageContext)
-
+        console.log(error.config);
+        console.groupEnd();
+      });
+  };
+  useEffect(() => {
+    if (_spPageContextInfo !== undefined) {
+      if (
+        _spPageContextInfo.webServerRelativeUrl ===
+        _spPageContextInfo.siteServerRelativeUrl
+      ) {
+        sitePath = "";
+      } else {
+        sitePath = _spPageContextInfo.webServerRelativeUrl.replace(
+          _spPageContextInfo.siteServerRelativeUrl + "/",
+          ""
+        );
+      }
     }
+    //getSiteTitle().then(response => console.log(response));
+    return () => {};
+  }, []);
 
-    componentDidMount() {
-        const relativeUrl = this.props.pageContext.webServerRelativeUrl.replace(this.props.pageContext.siteServerRelativeUrl + '/', '')
+  console.log("sitePath", sitePath);
 
-        const nodes = relativeUrl.split('/')
-
-        nodes.foreach(node)
-
-        Axios.all()
-
-
-        // Axios.get(this.props.pageContext.siteAbsoluteUrl + "/_api/web")
-        //   .then(response => {
-        //     console.log("response", response);
-        //     this.setState({
-        //       siteName: response.data.Title
-        //     });
-        //   })
-        //   .catch(error => {
-        //     console.groupCollapsed("Error Details");
-        //     if (error.response) {
-        //       // The request was made and the server responded with a status code
-        //       // that falls out of the range of 2xx
-        //       console.log(error.response.data);
-        //       console.log(error.response.status);
-        //       console.log(error.response.headers);
-        //     } else if (error.request) {
-        //       // The request was made but no response was received
-        //       // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-        //       // http.ClientRequest in node.js
-        //       console.log(error.request);
-        //     } else {
-        //       // Something happened in setting up the request that triggered an Error
-        //       console.log("Error", error.message);
-        //     }
-        //     console.log(error.config);
-        //     console.groupEnd();
-        //   });
-    }
-
-    render() {
-        return (
-            <div></div>
-        )
-    }
+  return (
+    <Link color="primary" href="#">
+      {siteName}
+    </Link>
+  );
 }
-
-export default SiteBreadcrumb
