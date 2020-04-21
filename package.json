@@ -4,17 +4,19 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.3",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "proxy": "node ./api-server.js",
+    "startServers": "concurrently --kill-others \"npm run proxy\" \"npm run start\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +32,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.9.11",
+    "citz-imb-sp-utilities": "^1.2.0",
+    "concurrently": "^5.1.0",
+    "sp-rest-proxy": "^2.11.0"
+  },
+  "proxy": "http://localhost:8081"
 }
