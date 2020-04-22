@@ -35,8 +35,10 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.9.11",
-    "citz-imb-sp-utilities": "^1.2.0",
+    "citz-imb-sp-utilities": "^1.2.2",
     "concurrently": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "sp-rest-proxy": "^2.11.0"
   },
   "proxy": "http://localhost:8081"
