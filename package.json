@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.9.11",
-    "citz-imb-sp-utilities": "^1.2.2",
+    "citz-imb-sp-utilities": "^1.2.3",
     "concurrently": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
