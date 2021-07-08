@@ -1,3 +1,5 @@
+[![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](<Redirect-URL>)
+
 # Breadcrumb Navigation
 Creates a breadcrumb on all pages within the SharePoint Collection.  Also hides pageTitle.
 
