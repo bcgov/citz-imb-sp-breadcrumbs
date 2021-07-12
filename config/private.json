@@ -1,0 +1,9 @@
+{
+  "siteUrl": "https://citz.sp.gov.bc.ca/sites/dev",
+  "strategy": "AdfsUserCredentials",
+  "password": "993efc7e3e3a90727f8bb332b89381f81f8ec44be321005b34a6df5b870849bfabce599224cda4e9d1242521456b4667tGULysOfiToQa+mLMUbrCA==",
+  "relyingParty": "urn:sp.gov.bc.ca",
+  "adfsCookie": "FedAuth",
+  "username": "stoews@idir",
+  "adfsUrl": "https://sts.gov.bc.ca"
+}

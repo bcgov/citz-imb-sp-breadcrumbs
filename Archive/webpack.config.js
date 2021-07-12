@@ -1,25 +1,30 @@
 const path = require('path')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-	entry: './src/index.js',
 	output: {
 		path: path.join(__dirname, '/dist/SharePointBreadcrumb_Breadcrumb feature/Style Library/Breadcrumb/js'),
 		filename: 'breadcrumb.js',
 	},
+	devServer: {
+		port: 8080,
+		watchContentBase: true
+	},
+	resolve: {
+		extensions: ["", ".webpack.js", ".web.js", ".js", ".json", ".jsx", ".ts", ".tsx"]
+	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
 				},
 			},
 			{
-				test: /\.css$/,
+				test: /\.scss$/,
 				exclude: /node_modules/,
-				use: ['style-loader', 'css-loader'],
+				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
 		],
 	}

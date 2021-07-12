@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>SharePoint Breadcrumbs Harness</title>
-	</head>
-	<body>
-		<script type="text/javascript">
-			_spPageContextInfo = {
-				webAbsoluteUrl: 'http://localhost:8081/sites/DEV',
-				siteAbsoluteUrl: 'http://localhost:8081/sites/DEV',
-				siteServerRelativeUrl: '/sites/DEV',
-				webServerRelativeUrl: '/sites/DEV',
-				//pageListId: "{64f8b1d1-e208-4a08-b5cc-850ee1a45698}" //list
-				//pageListId: "{eadd0061-be17-4072-a7e0-f741bee386a6}" //library
-			}
-		</script>
-		<div id="titleAreaRow">
-			<div class="ms-breadcrumb-box"></div>
-		</div>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumb Harness</title>
+</head>
+<body>
+    <script type="text/javascript">
+        _spPageContextInfo = {
+            webAbsoluteUrl: 'http://localhost:8081/sites/DEV',
+            siteAbsoluteUrl: 'http://localhost:8081/sites/DEV',
+            siteServerRelativeUrl: '/sites/DEV',
+            webServerRelativeUrl: '/sites/DEV',
+            //pageListId: "{64f8b1d1-e208-4a08-b5cc-850ee1a45698}" //list
+            //pageListId: "{eadd0061-be17-4072-a7e0-f741bee386a6}" //library
+        }
+    </script>
+
+    <div id="titleAreaRow" class="ms-tableRow">
+        <div class="ms-breadcrumb-box ms-tableCell ms-verticalAlignTop ms-hidden">
+            <h1 id="pageTitle" class="ms-core-pageTitle">
+                <span id="DeltaPlaceHolderPageTitleInTitleArea"> Dev Site TITLE </span>
+                <div
+                    id="DeltaPlaceHolderPageDescription"
+                    class="ms-displayInlineBlock ms-normalWrap"
+                >
+                    <a
+                        href="javascript:;"
+                        id="ms-pageDescriptionDiv"
+                        style="display: none"
+                        data-accessibility-nocheck="true"
+                        title=""
+                    >
+                        <span id="ms-pageDescriptionImage">&nbsp;</span>
+                    </a>
+                    <span class="ms-accessible" id="ms-pageDescription"> </span>
+                    <script type="text/javascript">
+                        // <![CDATA[
+
+                        _spBodyOnLoadFunctionNames.push('setupPageDescriptionCallout')
+                        // ]]>
+                    </script>
+                </div>
+            </h1>
+        </div>
+    </div>
+    <div id='root'></div>
+</body>
 </html>
