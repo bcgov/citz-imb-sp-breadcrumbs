@@ -1,9 +1,9 @@
 {
   "siteUrl": "https://citz.sp.gov.bc.ca/sites/dev",
   "strategy": "AdfsUserCredentials",
-  "password": "993efc7e3e3a90727f8bb332b89381f81f8ec44be321005b34a6df5b870849bfabce599224cda4e9d1242521456b4667tGULysOfiToQa+mLMUbrCA==",
-  "relyingParty": "urn:sp.gov.bc.ca",
-  "adfsCookie": "FedAuth",
   "username": "stoews@idir",
-  "adfsUrl": "https://sts.gov.bc.ca"
+  "password": "c2062eb0899f235bafc961d4a0dc7dc7f2697efa65fa810f88723f02de98b393ff920ba82a12a3697db1aed1459fd9e7WeZRXrVtWOyj05gNSqNO2w==",
+  "relyingParty": "urn:sp.gov.bc.ca",
+  "adfsUrl": "https://sts.gov.bc.ca",
+  "adfsCookie": "FedAuth"
 }
