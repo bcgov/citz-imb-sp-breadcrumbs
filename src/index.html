@@ -12,7 +12,9 @@
         webAbsoluteUrl: 'http://localhost:8081/sites/DEV',
         siteAbsoluteUrl: 'http://localhost:8081/sites/DEV',
         siteServerRelativeUrl: '/sites/DEV',
-        webServerRelativeUrl: '/sites/DEV',
+        webServerRelativeUrl: '/sites/DEV',  //root site
+        webTitle: "Dev Site", //root site title
+        pageListId: '{1fdc29f4-e568-4aba-9d75-2cdde4f3d620}', //root home page
         //pageListId: "{64f8b1d1-e208-4a08-b5cc-850ee1a45698}" //list
         //pageListId: "{eadd0061-be17-4072-a7e0-f741bee386a6}" //library
       }
@@ -24,30 +26,8 @@
           <span id="DeltaPlaceHolderPageTitleInTitleArea">
             Dev Site TITLE
           </span>
-          <div
-            id="DeltaPlaceHolderPageDescription"
-            class="ms-displayInlineBlock ms-normalWrap"
-          >
-            <a
-              href="javascript:;"
-              id="ms-pageDescriptionDiv"
-              style="display: none"
-              data-accessibility-nocheck="true"
-              title=""
-            >
-              <span id="ms-pageDescriptionImage">&nbsp;</span>
-            </a>
-            <span class="ms-accessible" id="ms-pageDescription"> </span>
-            <script type="text/javascript">
-              // <![CDATA[
-
-              _spBodyOnLoadFunctionNames.push('setupPageDescriptionCallout')
-              // ]]>
-            </script>
-          </div>
         </h1>
       </div>
     </div>
-    <div id="root"></div>
   </body>
 </html>

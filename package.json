@@ -40,6 +40,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "@types/sharepoint": "^2016.1.10",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "babel-loader": "^8.2.2",
